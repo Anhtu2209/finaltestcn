@@ -1,7 +1,7 @@
 const startButton = document.querySelector('button');
 const gridItems = document.querySelectorAll('.grid > div');
 const timerDisplay = document.getElementById('timer');
-const historyTable = document.getElementById('min-w-full bg-white'); // Thay 'history' bằng id của bảng
+const historyTable = document.getElementById("history-table"); // Thay 'history' bằng id của bảng
 const arrowButtons = document.querySelectorAll('.btnarrow');
 
 let isStarted = false;
@@ -48,6 +48,7 @@ function updateHistory(move) {
 }
 
 function moveItem(direction) {
+
   const emptyIndex = Array.from(gridItems).findIndex(item => item.textContent === '');
   let targetIndex;
 
@@ -91,13 +92,62 @@ startButton.addEventListener('click', () => {
   }
 });
 
-arrowButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    if (isStarted) {
-      const direction = button.textContent === '↑' ? 'up' :
-                        button.textContent === '↓' ? 'down' :
-                        button.textContent === '←' ? 'left' : 'right';
-      moveItem(direction);
-    }
+document.addEventListener('DOMContentLoaded', function() {
+  arrowButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      if (isStarted) {
+        const direction = button.getAttribute('data-direction');
+        switch (direction) {
+          case 'up':
+              moveItem('up');           
+            break;
+          case 'down':
+              moveItem('down');           
+            break;
+          case 'left':
+              moveItem('left');           
+            break;
+          case 'right':
+              moveItem('right');           
+            break;
+        
+          default:
+            break;
+        }
+      }
+    });
   });
 });
+document.addEventListener('keydown', function(event){
+  if (isStarted) {
+    switch (event.key.toUpperCase()) {
+      case 'ArrowUp':
+        moveItem('up');           
+        break;
+      case 'ArrowDown':
+          moveItem('down');           
+        break;
+      case 'ArrowLeft':
+          moveItem('left');           
+        break;
+      case 'ArrowRight':
+          moveItem('right');           
+        break;
+      case 'W':
+        moveItem('up');           
+        break;
+      case 'S':
+          moveItem('down');           
+        break;
+      case 'A':
+          moveItem('left');           
+        break;
+      case 'D':
+          moveItem('right');           
+        break;
+    
+      default:
+        break;
+    }
+  }
+})
