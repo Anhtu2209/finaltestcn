@@ -1,7 +1,7 @@
 const startButton = document.querySelector('button');
 const gridItems = document.querySelectorAll('.grid > div');
 const timerDisplay = document.getElementById('timer');
-const historyTable = document.getElementById("history-table"); // Thay 'history' bằng id của bảng
+const historyTable = document.getElementById("history-table"); 
 const arrowButtons = document.querySelectorAll('.btnarrow');
 
 let isStarted = false;
@@ -11,7 +11,7 @@ let moves =[];
 
 function shuffle() {
   const numbers = Array.from({length: gridItems.length - 1}, (_, i) => i + 1);
-  for (let i = 0; i < 100 ; i++){  // 100 lần shuffle
+  for (let i = 0; i < 100 ; i++){  
     numbers.sort(() => 0.5 - Math.random());
   }
   gridItems.forEach((item, index) => {
@@ -87,8 +87,8 @@ startButton.addEventListener('click', () => {
     stopTimer();
     startButton.textContent = 'Bắt đầu';
     isStarted = false;
-    moves =[] // Reset lịch sử bước đi
-    historyTable.innerHTML = ''; // Xóa nội dung bảng lịch sử
+    moves =[] 
+    historyTable.innerHTML = ''; 
   }
 });
 
