@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Game Layout</title>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
+    <div class="mb-4">
+        <button class="bg-green-500 text-white px-4 py-2 rounded">Bắt đầu</button>
+    </div>
+    <div class="grid grid-cols-4 gap-4 mb-4">
+        <div class="bg-green-200 p-6 text-center">1</div>
+        <div class="bg-red-200 p-6 text-center">2</div>
+        <div class="bg-blue-200 p-6 text-center">3</div>
+        <div class="bg-purple-200 p-6 text-center">4</div>
+        <div class="bg-yellow-200 p-6 text-center">5</div>
+        <div class="bg-pink-200 p-6 text-center">6</div>
+        <div class="bg-orange-200 p-6 text-center">7</div>
+        <div class="bg-gray-200 p-6 text-center">8</div>
+        <div class="bg-green-200 p-6 text-center">9</div>
+        <div class="bg-yellow-200 p-6 text-center">10</div>
+        <div class="bg-orange-200 p-6 text-center">11</div>
+        <div class="bg-gray-400 p-6 text-center"></div>
+    </div>
+    <div class="clock">
+        <div class="flex justify-between w-full max-w-md mb-4">
+            <div class="bg-green-300 p-4 text-center">Đồng Hồ<br><span id="timer">00:00</span></div>
+            
+        </div>
+        
+    </div>
+    <div class="controler">
+        <div class=" p-4 text-center">Hướng Dẫn Di Chuyển</div>
+        <div class="arrows">
+            <div class="arrowup">
+                <button class="btnarrow" data-direction='up'>⭡</button>
+            </div>
+            <div class="arrow">
+                <button class="btnarrow" data-direction='left'><b>⭠</b></button>
+                <button class="btnarrow" data-direction='down'><b>⭣</b></button>
+                <button class="btnarrow" data-direction='right'><b>⭢</b></button>
+            </div>
+        </div>
+        <div class="wasd">
+            <div class="wasd">
+                <button data-direction="up">W</button><br>
+                <button data-direction="left">A</button>
+                <button data-direction="down">S</button>
+                <button data-direction="right">D</button>
+        </div>
+    </div>
+    
+    <div class="w-full max-w-md">
+        <table class="min-w-full bg-white">
+            <thead>
+                <tr>
+                    <th class="py-2">#</th>
+                    <th class="py-2">Bước đi</th>
+                    <th class="py-2">Thời Gian</th>
+                </tr>
+            </thead>
+           
+        </table>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
